@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mantenimiento Pro | Reparación de Repuestos</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <img
+            src="img/diseño/logo.png"
+            alt="Logo Empresa"
+            onerror="this.style.display = 'none'"
+          />
+          <span>TU EMPRESA</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#">INICIO</a></li>
+          <li><a href="#servicios">SERVICIOS</a></li>
+          <li><a href="#resultados">MIRA NUESTROS RESULTADOS</a></li>
+          <li><a href="#contacto">CONTACTO</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <h1>TECNOLOGÍA EN MANTENIMIENTO QUE TRANSFORMA TUS EQUIPOS</h1>
+          <p>
+            Reparación especializada de repuestos con resultados visibles y
+            tiempos de entrega garantizados.
+          </p>
+
+          <div class="info-adicional">
+            <p>Cobertura: Tu Ciudad y principales alrededores.</p>
+          </div>
+
+          <div class="cta-buttons">
+            <a href="#contacto" class="btn-cotizar">Cotizar ahora</a>
+            <a href="https://wa.me/tunúmero" class="btn-whatsapp">
+              <i class="fab fa-whatsapp"></i> Whatsapp
+            </a>
+          </div>
+        </div>
+      </section>
+      <section id="servicios" class="services-container">
+        <div class="section-title">
+          <h2>Nuestras Soluciones Técnicas</h2>
+          <p>
+            Especialistas en darle una segunda vida a tus componentes
+            industriales y automotrices.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <i class="fas fa-tools"></i>
+            <h3>Reparación de Repuestos</h3>
+            <p>
+              Recuperamos piezas con desgaste crítico utilizando procesos de
+              rectificación avanzada.
+            </p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-microchip"></i>
+            <h3>Diagnóstico Electrónico</h3>
+            <p>
+              Identificamos fallas mediante escaneo y pruebas de banco para
+              asegurar precisión.
+            </p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Mantenimiento Preventivo</h3>
+            <p>
+              Programas de limpieza y ajuste para evitar paradas de emergencia
+              en tu operación.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="resultados" class="catalog-container">
+        <div class="section-title">
+          <h2>Nuestro Catálogo de Reparaciones</h2>
+          <p>
+            Visualiza la calidad de nuestras intervenciones técnicas en
+            diferentes componentes.
+          </p>
+        </div>
+
+        <div class="catalog-grid">
+          <div class="catalog-item">
+            <div class="catalog-img">
+              <img
+                src="img/catalogo/trabajo1.jpg"
+                alt="Descripción del trabajo"
+                onerror="
+                  this.src =
+                    'https://via.placeholder.com/400x300?text=Reparación+1'
+                "
+              />
+            </div>
+            <div class="catalog-info">
+              <h4>Rectificación de Motores</h4>
+              <span>Servicio Automotriz</span>
+            </div>
+          </div>
+
+          <div class="catalog-item">
+            <div class="catalog-img">
+              <img
+                src="img/catalogo/trabajo2.jpg"
+                alt="Descripción del trabajo"
+                onerror="
+                  this.src =
+                    'https://via.placeholder.com/400x300?text=Reparación+2'
+                "
+              />
+            </div>
+            <div class="catalog-info">
+              <h4>Mantenimiento de Bombas</h4>
+              <span>Sector Industrial</span>
+            </div>
+          </div>
+
+          <div class="catalog-item">
+            <div class="catalog-img">
+              <img
+                src="img/catalogo/trabajo3.jpg"
+                alt="Descripción del trabajo"
+                onerror="
+                  this.src =
+                    'https://via.placeholder.com/400x300?text=Reparación+3'
+                "
+              />
+            </div>
+            <div class="catalog-info">
+              <h4>Limpieza de Inyectores</h4>
+              <span>Mantenimiento Preventivo</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="contacto" class="contact-section">
+        <div class="section-title">
+          <h2>¿Listo para reparar tu equipo?</h2>
+          <p>
+            Envíanos los detalles de tu caso y un técnico te contactará en menos
+            de 24 horas.
+          </p>
+        </div>
+
+        <div class="contact-container">
+          <form class="contact-form">
+            <div class="form-group">
+              <input type="text" placeholder="Nombre completo" required />
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="Correo electrónico" required />
+            </div>
+            <div class="form-group">
+              <select required>
+                <option value="" disabled selected>Tipo de servicio</option>
+                <option value="reparacion">Reparación de Repuesto</option>
+                <option value="mantenimiento">Mantenimiento Preventivo</option>
+                <option value="diagnostico">Diagnóstico Técnico</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <textarea
+                placeholder="Cuéntanos sobre el problema de tu pieza o equipo..."
+                rows="5"
+              ></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Enviar Solicitud</button>
+          </form>
+
+          <div class="direct-contact">
+            <div class="contact-card">
+              <i class="fab fa-whatsapp"></i>
+              <h4>Asesoría Rápida</h4>
+              <p>Respuesta inmediata para urgencias técnicas.</p>
+              <a href="https://wa.me/tunúmero" class="contact-link"
+                >Abrir WhatsApp</a
+              >
+            </div>
+            <div class="contact-card">
+              <i class="fas fa-envelope-open-text"></i>
+              <h4>Consultas Formales</h4>
+              <p>Envíanos planos o fichas técnicas por correo.</p>
+              <a href="mailto:taller@tuempresa.com" class="contact-link"
+                >Enviar Email</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="contacto" class="main-footer">
+      <div class="footer-grid">
+        <div class="footer-info">
+          <h3>CONTACTO</h3>
+          <p><i class="fas fa-phone"></i> +57 300 123 4567</p>
+          <p><i class="fas fa-envelope"></i> taller@tuempresa.com</p>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> Cl. 72A #58-70, Bogota
+          </p>
+          <p><i class="fas fa-clock"></i> Lunes a Jueves: 7:00 AM - 6:00 PM / Viernes: 7:00 AM - 4:30 PM</p>
+        </div>
+
+        <div class="footer-map">
+          <h3>UBICACIÓN</h3>
+          <div id="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d508902.24029860867!2d-74.36443364374995!3d4.804582310953284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9b02486dbbb5%3A0xa78396aa3882d3a8!2sCl.%2072A%20%2358-70%2C%20Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1770733060897!5m2!1ses!2sco"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            >
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; 2026 Tu Empresa - Especialistas en Mantenimiento y Reparación
+        </p>
+      </div>
+    </footer>
+    <a href="https://wa.me/tunúmero" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+  </body>
+</html>
