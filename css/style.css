@@ -4,19 +4,25 @@
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 /* Header */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 8%;
-    background: white;
-    position: sticky;
+    padding: 15px 8%; /* Reduje un poco el padding para que no ocupe tanta pantalla */
+    background: rgba(255, 255, 255, 0.95); /* Un toque de transparencia se ve genial */
+    backdrop-filter: blur(5px); /* Efecto de vidrio esmerilado */
+    position: fixed; /* Fixed suele ser más estable para headers que sticky */
     top: 0;
+    left: 0;
+    width: 100%;
     z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05); /* Sombra muy sutil */
 }
-
 .logo span {
     font-weight: bold;
     font-size: 24px;
@@ -34,6 +40,29 @@
     margin-left: 25px;
     font-size: 14px;
     font-weight: 600;
+    position: relative;
+    padding-bottom: 5px;
+}
+/* La línea invisible que aparecerá */
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0; /* Empieza sin ancho */
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #E53935; /* Usa el color azul de tu marca */
+    transition: width 0.3s ease; /* Aquí sucede la magia de la animación */
+}
+
+/* Cuando pasas el mouse, la línea crece al 100% */
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+/* Opcional: Que el texto también cambie un poco de color */
+.nav-links li a:hover {
+    color: #E53935;
 }
 
 /* Hero Section */
@@ -89,8 +118,42 @@
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 0px #b71c1c;
+    position: relative;
+    overflow: hidden;
 }
 
+.btn-cotizar::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -100%;
+    width: 50%;
+    height: 200%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.4) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(30deg);
+    transition: none; 
+}
+
+.btn-cotizar:hover::after {
+    left: 150%;
+    transition: all 0.6s ease;
+}
+
+@keyframes sacudida {
+    0% { transform: rotate(0deg); }
+    1% { transform: rotate(5deg); }
+    2% { transform: rotate(-5deg); }
+    3% { transform: rotate(5deg); }
+    4% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+}
 .btn-whatsapp {
     background: #25D366;
     color: white;
@@ -101,8 +164,21 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 0px #128C7E;
+    animation: sacudida 5s infinite;
 }
 
+.btn-cotizar:hover, .btn-whatsapp:hover {
+    transform: translateY(-4px); /* Sube un poco */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* La sombra se vuelve suave y profunda */
+    filter: brightness(1.1); /* Brilla ligeramente */
+}
+
+.btn-cotizar:active, .btn-whatsapp:active {
+    transform: translateY(2px); /* Se hunde */
+    box-shadow: 0 2px 0px rgba(0, 0, 0, 0.2); /* Pierde la sombra 3D */
+}
 .services-container {
     padding: 80px 8%;
     background: #f9f9f9;
@@ -323,4 +399,52 @@
 .whatsapp-float:hover {
     transform: scale(1.1);
     background-color: #128C7E;
+} 
+
+/* Dispositivos móviles (Celulares) */
+@media (max-width: 768px) {
+  
+  /* Ajustar el menú de navegación */
+  .nav-links {
+    display: none; /* O puedes convertirlo en un menú hamburguesa más adelante */
+  }
+
+  /* Hacer que las rejillas (grids) sean de 1 sola columna */
+  .services-grid, 
+  .catalog-grid, 
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+    padding: 10px;
+  }
+
+  /* Ajustar el tamaño del texto en el Hero */
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  /* Hacer que las imágenes del catálogo ocupen todo el ancho */
+  .catalog-item {
+    width: 100%;
+  }
+} 
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column; /* Apila el formulario y la info de contacto */
+  }
+  
+  .btn-submit {
+    width: 100%; /* Botón grande para que sea fácil de presionar con el pulgar */
+  }
+}
+
+section {
+    scroll-margin-top: 80px; /* Esto compensa la altura del header fijo */
 }
